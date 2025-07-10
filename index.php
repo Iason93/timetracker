@@ -8,6 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/c46d1e780c.js" crossorigin="anonymous"></script>
+
+    <style>
+        *:disabled{
+            background-color:#CCCCCC !important;
+            border: none !important;
+        }
+        .btn-col{ width: 38px;}
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -15,11 +23,11 @@
         <header class="row">
 
             <div class="col-6">
-                <a href="#">Enter Restore Mode</a>
+                <a data-mode="restore" id="btn-mode" href="#">Enter <span id="lb1-mode">Restore</span> Mode</a>
             </div>
 
             <div class="col-6 text-end">
-                Total Time:
+                Total Time: <span id="tally"></span>
             </div>
 
         </header>
@@ -28,7 +36,7 @@
             <form id="form-new">
               <div class="form-group row">
                  <div class="col-10">
-                     <input id="task" name="task" class="form-control" placeholder="Enter new task name...">
+                     <input id="task" name="name" class="form-control" placeholder="Enter new task name...">
                  </div>
 
                  <div class="col-2">
